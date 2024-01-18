@@ -1,0 +1,7 @@
+FROM PYTHON:3-ALPINE
+WORKDIR  /SERVICE
+COPY requirements.txt /SERVICE
+RUN PIP INSTALL -R requirements.txt
+COPY . ./
+EXPOSE 8080
+ENTRYPOINT [ "PYTHON3","app.py" ]
